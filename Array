@@ -1,0 +1,97 @@
+
+//Print odd numbers in an array
+
+let odd = (arr)=>
+{ let oddnumbers=[] ;
+  for( let i in arr)
+   {
+     if(arr[i]%2!==0)
+     {
+        oddnumbers.push(arr[i]);
+     }
+  
+    } 
+    console.log(oddnumbers);
+}
+odd([11,12,13,14,15,16,17,18,19]);
+
+
+//Convert all the strings to title caps in a string array
+
+ let caps=(arr)=>
+ {
+     let titlecase =[];
+    
+    for (var i in arr)
+     {  
+         let converted =arr[i].toLowerCase();
+         converted= converted.charAt(0).toUpperCase()+converted.slice(1);
+         titlecase.push(converted);
+        }
+  console.log(titlecase);  
+}
+caps(["my","name","is","gokula","sINdhuja"]);
+
+//Sum of all numbers in an array
+
+let sumofarr=(arr)=>
+{let sum=0
+    for(let i in arr)
+    { //adding all the numbers in an array and storing it in sum 
+      sum=sum+arr[i];
+    }
+     console.log(sum);
+}
+sumofarr([1,2,3,4,5,6,7,8,9]);
+
+
+//Return all the prime numbers in an array
+
+let numarr= (arr)=>
+{ 
+ arr.forEach((element) => {
+     if(element<=1)
+     {
+         return;
+     }
+    else
+    {//iterate till i<element
+     for(i=2;i<element;i++)
+     {
+        //prime number is only divided by one and itself
+        //if the passed element is divisible by any another number it does not return element
+         if(element%i==0)
+         {
+            return;
+          }
+     }  
+     //else return elements
+     console.log(element);
+
+     }
+ });    
+}
+ numarr([1,2,3,4,5,6,7,8,9,11,13]); 
+
+
+//Return all the palindromes in an array
+
+
+let arr=function(arr)
+{
+    arr.forEach((element) => {//converting number to string
+      let   temp=element.toString();
+        //converting number to string and using split to convert it into array of individual values
+        //and using reverse method to reverse the individual values in array and joining them using join method
+        //which returns string type
+
+        //reverse can also be done using looping statements
+       let  rev=element.toString().split("").reverse().join("");
+      if(temp===rev)
+      {
+     console.log(element);
+      }
+    });
+}
+arr([121,22,35,76,99]);
+
